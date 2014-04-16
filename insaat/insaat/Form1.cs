@@ -16,5 +16,10 @@ namespace insaat
         {
             InitializeComponent();
         }
+
+        private void yeniVeriTabanınıDüzenlemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
