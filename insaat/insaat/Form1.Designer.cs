@@ -32,6 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.keşifnameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yeniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baskıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veriTabanıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.katalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,9 +42,6 @@
             this.yeniVeriTabanınıDüzenlemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programHakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,24 @@
             this.yeniToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.yeniToolStripMenuItem.Text = "Yeni keşifname";
             // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.importToolStripMenuItem.Text = "İmport";
+            // 
+            // çıkışToolStripMenuItem
+            // 
+            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.çıkışToolStripMenuItem.Text = "Çıkış";
+            // 
             // baskıToolStripMenuItem
             // 
             this.baskıToolStripMenuItem.Name = "baskıToolStripMenuItem";
@@ -94,7 +112,7 @@
             // katalogToolStripMenuItem
             // 
             this.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem";
-            this.katalogToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.katalogToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.katalogToolStripMenuItem.Text = "Malzeme katalogu";
             // 
             // fiyatlarTabanıToolStripMenuItem
@@ -123,24 +141,6 @@
             this.programHakkındaToolStripMenuItem.Name = "programHakkındaToolStripMenuItem";
             this.programHakkındaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.programHakkındaToolStripMenuItem.Text = "Program hakkında";
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportToolStripMenuItem.Text = "Export";
-            // 
-            // importToolStripMenuItem
-            // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.importToolStripMenuItem.Text = "İmport";
-            // 
-            // çıkışToolStripMenuItem
-            // 
-            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.çıkışToolStripMenuItem.Text = "Çıkış";
             // 
             // Form1
             // 
