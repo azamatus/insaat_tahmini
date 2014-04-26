@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace insaat
 {
     public partial class Form1 : Form
     {
+        readonly DatabaseOperations _databaseOperations = new DatabaseOperations();
         public Form1()
         {
             InitializeComponent();
@@ -22,19 +24,9 @@ namespace insaat
 
         }
 
-
-        private void customersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.customersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.insaatDataSet);
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'insaatDataSet.Customers' table. You can move, or remove it, as needed.
-            this.customersTableAdapter.Fill(this.insaatDataSet.Customers);
+            refresh();
 
         }
 
@@ -42,6 +34,43 @@ namespace insaat
         {
             var customer = new Customer();
             customer.ShowDialog();
+            refresh();
+        }
+        private void refresh()
+        {
+            customersDataGridView.DataSource = _databaseOperations.fillDGV();
+        }
+
+        private void customersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            var customer = new CustomerEdit(this.customersDataGridView.CurrentRow);
+            customer.nameTextBox.Text = this.customersDataGridView.CurrentRow.Cells[1].Value.ToString();
+            customer.objectTextBox.Text = this.customersDataGridView.CurrentRow.Cells[2].Value.ToString();
+            customer.typeOfWorkTextBox.Text = this.customersDataGridView.CurrentRow.Cells[3].Value.ToString();
+            customer.contractorTextBox.Text = this.customersDataGridView.CurrentRow.Cells[4].Value.ToString();
+            customer.brigadeTextBox.Text = this.customersDataGridView.CurrentRow.Cells[5].Value.ToString();
+
+            customer.ShowDialog();
+            refresh();
+        }
+
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int customer_id;
+            customer_id = (int)this.customersDataGridView.CurrentRow.Cells[0].Value;
+            switch (MessageBox.Show("Gerçekten silmek istiyor musunuz?", "Müşteri silme", MessageBoxButtons.YesNo))
+            {
+                 case DialogResult.Yes:
+                    _databaseOperations.DeleteCustomer(customer_id);
+                    refresh();
+                    break;
+            }
         }
     }
 }
