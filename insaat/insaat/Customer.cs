@@ -12,18 +12,13 @@ namespace insaat
 {
     public partial class Customer : Form
     {
+        readonly DatabaseOperations _databaseOperations = new DatabaseOperations();
         public Customer()
         {
             InitializeComponent();
         }
 
-        private void customersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.customersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.insaatDataSet);
-
-        }
+      
 
         private void Customer_Load(object sender, EventArgs e)
         {
@@ -34,9 +29,21 @@ namespace insaat
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.customersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.insaatDataSet);
+            Customers customer = new Customers();
+            customer.Name = nameTextBox.Text;
+            customer.Nesne = objectTextBox.Text;
+            customer.TypeOfWork = typeOfWorkTextBox.Text;
+            customer.Contractor = contractorTextBox.Text;
+            customer.Brigade = brigadeTextBox.Text;
+            
+            _databaseOperations.Insert(customer);
+            MessageBox.Show("Müşteri eklendi", "Müşteri");
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
