@@ -118,7 +118,6 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "name", true));
             this.nameTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameTextBox.Location = new System.Drawing.Point(124, 61);
             this.nameTextBox.Name = "nameTextBox";
@@ -137,7 +136,6 @@
             // 
             // objectTextBox
             // 
-            this.objectTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "object", true));
             this.objectTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.objectTextBox.Location = new System.Drawing.Point(124, 94);
             this.objectTextBox.Name = "objectTextBox";
@@ -146,7 +144,6 @@
             // 
             // typeOfWorkTextBox
             // 
-            this.typeOfWorkTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "typeOfWork", true));
             this.typeOfWorkTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.typeOfWorkTextBox.Location = new System.Drawing.Point(124, 127);
             this.typeOfWorkTextBox.Name = "typeOfWorkTextBox";
@@ -155,7 +152,6 @@
             // 
             // contractorTextBox
             // 
-            this.contractorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "contractor", true));
             this.contractorTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.contractorTextBox.Location = new System.Drawing.Point(124, 160);
             this.contractorTextBox.Name = "contractorTextBox";
@@ -164,7 +160,6 @@
             // 
             // brigadeTextBox
             // 
-            this.brigadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "brigade", true));
             this.brigadeTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.brigadeTextBox.Location = new System.Drawing.Point(124, 193);
             this.brigadeTextBox.Name = "brigadeTextBox";
