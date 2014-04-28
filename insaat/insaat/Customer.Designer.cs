@@ -35,6 +35,7 @@
             System.Windows.Forms.Label contractorLabel;
             System.Windows.Forms.Label brigadeLabel;
             System.Windows.Forms.Label label_title;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.insaatDataSet = new insaat.insaatDataSet();
@@ -216,6 +217,7 @@
             this.Controls.Add(this.contractorTextBox);
             this.Controls.Add(brigadeLabel);
             this.Controls.Add(this.brigadeTextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Customer";

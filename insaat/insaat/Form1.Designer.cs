@@ -46,9 +46,6 @@
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baskıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veriTabanıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.katalogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fiyatlarTabanıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yeniVeriTabanınıDüzenlemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yardımToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programHakkındaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insaatDataSet = new insaat.insaatDataSet();
@@ -129,33 +126,11 @@
             // 
             // veriTabanıToolStripMenuItem
             // 
-            this.veriTabanıToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.katalogToolStripMenuItem,
-            this.fiyatlarTabanıToolStripMenuItem,
-            this.yeniVeriTabanınıDüzenlemeToolStripMenuItem});
             this.veriTabanıToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.veriTabanıToolStripMenuItem.Name = "veriTabanıToolStripMenuItem";
             this.veriTabanıToolStripMenuItem.Size = new System.Drawing.Size(70, 23);
             this.veriTabanıToolStripMenuItem.Text = "Katalog";
-            // 
-            // katalogToolStripMenuItem
-            // 
-            this.katalogToolStripMenuItem.Name = "katalogToolStripMenuItem";
-            this.katalogToolStripMenuItem.Size = new System.Drawing.Size(225, 24);
-            this.katalogToolStripMenuItem.Text = "Malzeme katalogu";
-            // 
-            // fiyatlarTabanıToolStripMenuItem
-            // 
-            this.fiyatlarTabanıToolStripMenuItem.Name = "fiyatlarTabanıToolStripMenuItem";
-            this.fiyatlarTabanıToolStripMenuItem.Size = new System.Drawing.Size(225, 24);
-            this.fiyatlarTabanıToolStripMenuItem.Text = "Fiyatlar katalogu";
-            // 
-            // yeniVeriTabanınıDüzenlemeToolStripMenuItem
-            // 
-            this.yeniVeriTabanınıDüzenlemeToolStripMenuItem.Name = "yeniVeriTabanınıDüzenlemeToolStripMenuItem";
-            this.yeniVeriTabanınıDüzenlemeToolStripMenuItem.Size = new System.Drawing.Size(225, 24);
-            this.yeniVeriTabanınıDüzenlemeToolStripMenuItem.Text = "Yeni katalog oluşturma";
-            this.yeniVeriTabanınıDüzenlemeToolStripMenuItem.Click += new System.EventHandler(this.yeniVeriTabanınıDüzenlemeToolStripMenuItem_Click);
+            this.veriTabanıToolStripMenuItem.Click += new System.EventHandler(this.veriTabanıToolStripMenuItem_Click);
             // 
             // yardımToolStripMenuItem
             // 
@@ -190,6 +165,8 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CustomersTableAdapter = this.customersTableAdapter;
+            this.tableAdapterManager.MaterialsSectionsTableAdapter = null;
+            this.tableAdapterManager.MaterialsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = insaat.insaatDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // customersDataGridView
@@ -340,9 +317,6 @@
         private System.Windows.Forms.ToolStripMenuItem yeniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem baskıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veriTabanıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem katalogToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fiyatlarTabanıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yeniVeriTabanınıDüzenlemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yardımToolStripMenuItem;
