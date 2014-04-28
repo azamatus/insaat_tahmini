@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insaat", "insaat\insaat.csproj", "{125A5F29-35E4-4CAF-98D8-0F1CA6481580}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{7E416D37-1D5E-4FAA-B6FD-6AC66C3120BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{125A5F29-35E4-4CAF-98D8-0F1CA6481580}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{125A5F29-35E4-4CAF-98D8-0F1CA6481580}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{125A5F29-35E4-4CAF-98D8-0F1CA6481580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E416D37-1D5E-4FAA-B6FD-6AC66C3120BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E416D37-1D5E-4FAA-B6FD-6AC66C3120BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E416D37-1D5E-4FAA-B6FD-6AC66C3120BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E416D37-1D5E-4FAA-B6FD-6AC66C3120BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

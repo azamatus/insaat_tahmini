@@ -72,5 +72,11 @@ namespace insaat
                     break;
             }
         }
+
+        private void veriTabanıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var catalogForm = new Catalog();
+            catalogForm.ShowDialog();
+        }
     }
 }

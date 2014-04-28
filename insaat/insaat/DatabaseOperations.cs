@@ -5,6 +5,7 @@ using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entity;
 
 namespace insaat
 {
@@ -49,7 +50,7 @@ namespace insaat
                 }
             }
         }
-
+        
         public List<Customers> fillDGV()
         {
             List<Customers> customersList = new List<Customers>();
@@ -125,6 +126,118 @@ namespace insaat
             try
             {
                 command.CommandText = "DELETE FROM Customers WHERE Id= "+customer_id;
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void InsertMaterials()
+        {
+            
+        }
+
+        public void InsertSectionsMaterials(MaterialsSections materialsSections)
+        {
+            try
+            {
+                command.CommandText = string.Format("INSERT INTO MaterialsSections (SectionName) Values('{0}')", materialsSections.SectionName);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public List<MaterialsSections> SelectSectionsMaterials()
+        {
+            List<MaterialsSections> materialsSectionsList = new List<MaterialsSections>();
+            try
+            {
+                command.CommandText = "SELECT * FROM MaterialsSections";
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    MaterialsSections materialsSections = new MaterialsSections();
+
+                    materialsSections.Id = Convert.ToInt32(reader["Id"].ToString());
+                    materialsSections.SectionName = reader["SectionName"].ToString();
+                    materialsSectionsList.Add(materialsSections);
+                }
+                return materialsSectionsList;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void UpdateMaterialsSections(MaterialsSections materialsSections)
+        {
+            try
+            {
+                command.CommandText =
+                    string.Format(
+                        "UPDATE MaterialsSections SET SectionName= '{0}' WHERE Id= " + materialsSections.Id,
+                        materialsSections.SectionName);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void DeleteMaterialsSections(int materialsSectionsId)
+        {
+            try
+            {
+                command.CommandText = "DELETE FROM MaterialsSections WHERE Id= " + materialsSectionsId;
                 command.CommandType = CommandType.Text;
                 connection.Open();
 

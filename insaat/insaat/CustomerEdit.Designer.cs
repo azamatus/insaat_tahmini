@@ -60,6 +60,56 @@
             label_title.TabIndex = 30;
             label_title.Text = "Müşteri düzenleme";
             // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            nameLabel.Location = new System.Drawing.Point(11, 61);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(79, 23);
+            nameLabel.TabIndex = 18;
+            nameLabel.Text = "Müşteri:";
+            // 
+            // objectLabel
+            // 
+            objectLabel.AutoSize = true;
+            objectLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            objectLabel.Location = new System.Drawing.Point(11, 94);
+            objectLabel.Name = "objectLabel";
+            objectLabel.Size = new System.Drawing.Size(66, 23);
+            objectLabel.TabIndex = 20;
+            objectLabel.Text = "Nesne:";
+            // 
+            // typeOfWorkLabel
+            // 
+            typeOfWorkLabel.AutoSize = true;
+            typeOfWorkLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            typeOfWorkLabel.Location = new System.Drawing.Point(13, 127);
+            typeOfWorkLabel.Name = "typeOfWorkLabel";
+            typeOfWorkLabel.Size = new System.Drawing.Size(81, 23);
+            typeOfWorkLabel.TabIndex = 22;
+            typeOfWorkLabel.Text = "İşin türü:";
+            // 
+            // contractorLabel
+            // 
+            contractorLabel.AutoSize = true;
+            contractorLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            contractorLabel.Location = new System.Drawing.Point(13, 160);
+            contractorLabel.Name = "contractorLabel";
+            contractorLabel.Size = new System.Drawing.Size(100, 23);
+            contractorLabel.TabIndex = 24;
+            contractorLabel.Text = "Müteahhit:";
+            // 
+            // brigadeLabel
+            // 
+            brigadeLabel.AutoSize = true;
+            brigadeLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            brigadeLabel.Location = new System.Drawing.Point(13, 193);
+            brigadeLabel.Name = "brigadeLabel";
+            brigadeLabel.Size = new System.Drawing.Size(60, 23);
+            brigadeLabel.TabIndex = 26;
+            brigadeLabel.Text = "Tugay:";
+            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -82,16 +132,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            nameLabel.Location = new System.Drawing.Point(11, 61);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(79, 23);
-            nameLabel.TabIndex = 18;
-            nameLabel.Text = "Müşteri:";
-            // 
             // nameTextBox
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -99,16 +139,6 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(380, 27);
             this.nameTextBox.TabIndex = 19;
-            // 
-            // objectLabel
-            // 
-            objectLabel.AutoSize = true;
-            objectLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            objectLabel.Location = new System.Drawing.Point(11, 94);
-            objectLabel.Name = "objectLabel";
-            objectLabel.Size = new System.Drawing.Size(66, 23);
-            objectLabel.TabIndex = 20;
-            objectLabel.Text = "Nesne:";
             // 
             // objectTextBox
             // 
@@ -118,16 +148,6 @@
             this.objectTextBox.Size = new System.Drawing.Size(380, 27);
             this.objectTextBox.TabIndex = 21;
             // 
-            // typeOfWorkLabel
-            // 
-            typeOfWorkLabel.AutoSize = true;
-            typeOfWorkLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            typeOfWorkLabel.Location = new System.Drawing.Point(13, 127);
-            typeOfWorkLabel.Name = "typeOfWorkLabel";
-            typeOfWorkLabel.Size = new System.Drawing.Size(81, 23);
-            typeOfWorkLabel.TabIndex = 22;
-            typeOfWorkLabel.Text = "İşin türü:";
-            // 
             // typeOfWorkTextBox
             // 
             this.typeOfWorkTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -136,16 +156,6 @@
             this.typeOfWorkTextBox.Size = new System.Drawing.Size(380, 27);
             this.typeOfWorkTextBox.TabIndex = 23;
             // 
-            // contractorLabel
-            // 
-            contractorLabel.AutoSize = true;
-            contractorLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            contractorLabel.Location = new System.Drawing.Point(13, 160);
-            contractorLabel.Name = "contractorLabel";
-            contractorLabel.Size = new System.Drawing.Size(100, 23);
-            contractorLabel.TabIndex = 24;
-            contractorLabel.Text = "Müteahhit:";
-            // 
             // contractorTextBox
             // 
             this.contractorTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -153,16 +163,6 @@
             this.contractorTextBox.Name = "contractorTextBox";
             this.contractorTextBox.Size = new System.Drawing.Size(380, 27);
             this.contractorTextBox.TabIndex = 25;
-            // 
-            // brigadeLabel
-            // 
-            brigadeLabel.AutoSize = true;
-            brigadeLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            brigadeLabel.Location = new System.Drawing.Point(13, 193);
-            brigadeLabel.Name = "brigadeLabel";
-            brigadeLabel.Size = new System.Drawing.Size(60, 23);
-            brigadeLabel.TabIndex = 26;
-            brigadeLabel.Text = "Tugay:";
             // 
             // brigadeTextBox
             // 
@@ -190,7 +190,10 @@
             this.Controls.Add(this.contractorTextBox);
             this.Controls.Add(brigadeLabel);
             this.Controls.Add(this.brigadeTextBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CustomerEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Müşteri düzenleme";
             this.ResumeLayout(false);
             this.PerformLayout();
