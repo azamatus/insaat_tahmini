@@ -12,7 +12,8 @@ namespace Entity
         private string materialName;
         private string unit;
         private double price;
-        private int sectionId;
+        private string section;
+        private int _sectionId;
 
         public int Id
         {
@@ -38,10 +39,16 @@ namespace Entity
             set { price = value; }
         }
 
+        public string Section
+        {
+            get { return section; }
+            set { section = value; }
+        }
+
         public int SectionId
         {
-            get { return sectionId; }
-            set { sectionId = value; }
+            get { return _sectionId; }
+            set { _sectionId = value; }
         }
     }
 }

@@ -146,7 +146,17 @@
               <Mapping SourceColumn="price" DataSetColumn="price" />
               <Mapping SourceColumn="sectionId" DataSetColumn="sectionId" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="insaatConnectionString (Settings)" DbObjectName="Materials" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        id, materialName, unit, price, sectionId
+FROM            Materials</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MaterialsSectionsTableAdapter" GeneratorDataComponentClassName="MaterialsSectionsTableAdapter" Name="MaterialsSections" UserDataComponentName="MaterialsSectionsTableAdapter">
             <MainSource>
@@ -192,7 +202,17 @@
               <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="sectionName" DataSetColumn="sectionName" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="insaatConnectionString (Settings)" DbObjectName="MaterialsSections" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        id, sectionName
+FROM            MaterialsSections</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -202,7 +222,7 @@
   <xs:element name="insaatDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="insaatDataSet" msprop:Generator_UserDSName="insaatDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Customers" msprop:Generator_TableClassName="CustomersDataTable" msprop:Generator_TableVarName="tableCustomers" msprop:Generator_RowChangedName="CustomersRowChanged" msprop:Generator_TablePropName="Customers" msprop:Generator_RowDeletingName="CustomersRowDeleting" msprop:Generator_RowChangingName="CustomersRowChanging" msprop:Generator_RowEvHandlerName="CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomersRowDeleted" msprop:Generator_RowClassName="CustomersRow" msprop:Generator_UserTableName="Customers" msprop:Generator_RowEvArgName="CustomersRowChangeEvent">
+        <xs:element name="Customers" msprop:Generator_TableClassName="CustomersDataTable" msprop:Generator_TableVarName="tableCustomers" msprop:Generator_TablePropName="Customers" msprop:Generator_RowDeletingName="CustomersRowDeleting" msprop:Generator_RowChangingName="CustomersRowChanging" msprop:Generator_RowEvHandlerName="CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="CustomersRowDeleted" msprop:Generator_UserTableName="Customers" msprop:Generator_RowChangedName="CustomersRowChanged" msprop:Generator_RowEvArgName="CustomersRowChangeEvent" msprop:Generator_RowClassName="CustomersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -244,7 +264,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Materials" msprop:Generator_TableClassName="MaterialsDataTable" msprop:Generator_TableVarName="tableMaterials" msprop:Generator_TablePropName="Materials" msprop:Generator_RowDeletingName="MaterialsRowDeleting" msprop:Generator_RowChangingName="MaterialsRowChanging" msprop:Generator_RowEvHandlerName="MaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialsRowDeleted" msprop:Generator_UserTableName="Materials" msprop:Generator_RowChangedName="MaterialsRowChanged" msprop:Generator_RowEvArgName="MaterialsRowChangeEvent" msprop:Generator_RowClassName="MaterialsRow">
+        <xs:element name="Materials" msprop:Generator_TableClassName="MaterialsDataTable" msprop:Generator_TableVarName="tableMaterials" msprop:Generator_RowChangedName="MaterialsRowChanged" msprop:Generator_TablePropName="Materials" msprop:Generator_RowDeletingName="MaterialsRowDeleting" msprop:Generator_RowChangingName="MaterialsRowChanging" msprop:Generator_RowEvHandlerName="MaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialsRowDeleted" msprop:Generator_RowClassName="MaterialsRow" msprop:Generator_UserTableName="Materials" msprop:Generator_RowEvArgName="MaterialsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -267,7 +287,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MaterialsSections" msprop:Generator_TableClassName="MaterialsSectionsDataTable" msprop:Generator_TableVarName="tableMaterialsSections" msprop:Generator_TablePropName="MaterialsSections" msprop:Generator_RowDeletingName="MaterialsSectionsRowDeleting" msprop:Generator_RowChangingName="MaterialsSectionsRowChanging" msprop:Generator_RowEvHandlerName="MaterialsSectionsRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialsSectionsRowDeleted" msprop:Generator_UserTableName="MaterialsSections" msprop:Generator_RowChangedName="MaterialsSectionsRowChanged" msprop:Generator_RowEvArgName="MaterialsSectionsRowChangeEvent" msprop:Generator_RowClassName="MaterialsSectionsRow">
+        <xs:element name="MaterialsSections" msprop:Generator_TableClassName="MaterialsSectionsDataTable" msprop:Generator_TableVarName="tableMaterialsSections" msprop:Generator_RowChangedName="MaterialsSectionsRowChanged" msprop:Generator_TablePropName="MaterialsSections" msprop:Generator_RowDeletingName="MaterialsSectionsRowDeleting" msprop:Generator_RowChangingName="MaterialsSectionsRowChanging" msprop:Generator_RowEvHandlerName="MaterialsSectionsRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialsSectionsRowDeleted" msprop:Generator_RowClassName="MaterialsSectionsRow" msprop:Generator_UserTableName="MaterialsSections" msprop:Generator_RowEvArgName="MaterialsSectionsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -298,7 +318,7 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="MaterialsSectionsMaterials" msdata:parent="MaterialsSections" msdata:child="Materials" msdata:parentkey="id" msdata:childkey="sectionId" msprop:Generator_UserChildTable="Materials" msprop:Generator_ChildPropName="GetMaterialsRows" msprop:Generator_UserRelationName="MaterialsSectionsMaterials" msprop:Generator_RelationVarName="relationMaterialsSectionsMaterials" msprop:Generator_UserParentTable="MaterialsSections" msprop:Generator_ParentPropName="MaterialsSectionsRow" />
+      <msdata:Relationship name="MaterialsSectionsMaterials" msdata:parent="MaterialsSections" msdata:child="Materials" msdata:parentkey="id" msdata:childkey="sectionId" msprop:Generator_UserChildTable="Materials" msprop:Generator_ChildPropName="GetMaterialsRows" msprop:Generator_UserRelationName="MaterialsSectionsMaterials" msprop:Generator_ParentPropName="MaterialsSectionsRow" msprop:Generator_RelationVarName="relationMaterialsSectionsMaterials" msprop:Generator_UserParentTable="MaterialsSections" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -17,15 +17,6 @@ namespace insaat
         {
             InitializeComponent();
         }
-
-        private void materialsSectionsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.materialsSectionsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.insaatDataSet);
-
-        }
-
         private void AddSectionForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'insaatDataSet.MaterialsSections' table. You can move, or remove it, as needed.
