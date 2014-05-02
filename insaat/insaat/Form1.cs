@@ -19,10 +19,7 @@ namespace insaat
             InitializeComponent();
         }
 
-        private void yeniVeriTabanınıDüzenlemeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -43,16 +40,18 @@ namespace insaat
 
         private void customersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            var customer = new CustomerEdit(this.customersDataGridView.CurrentRow);
-            customer.nameTextBox.Text = this.customersDataGridView.CurrentRow.Cells[1].Value.ToString();
-            customer.objectTextBox.Text = this.customersDataGridView.CurrentRow.Cells[2].Value.ToString();
-            customer.typeOfWorkTextBox.Text = this.customersDataGridView.CurrentRow.Cells[3].Value.ToString();
-            customer.contractorTextBox.Text = this.customersDataGridView.CurrentRow.Cells[4].Value.ToString();
-            customer.brigadeTextBox.Text = this.customersDataGridView.CurrentRow.Cells[5].Value.ToString();
+            var smetaForm = new SmetaForm();
+            smetaForm.ShowDialog();
 
-            customer.ShowDialog();
-            refresh();
+            //var customer = new CustomerEdit(customersDataGridView.CurrentRow);
+            //customer.nameTextBox.Text = customersDataGridView.CurrentRow.Cells[1].Value.ToString();
+            //customer.objectTextBox.Text = customersDataGridView.CurrentRow.Cells[2].Value.ToString();
+            //customer.typeOfWorkTextBox.Text = customersDataGridView.CurrentRow.Cells[3].Value.ToString();
+            //customer.contractorTextBox.Text = customersDataGridView.CurrentRow.Cells[4].Value.ToString();
+            //customer.brigadeTextBox.Text = customersDataGridView.CurrentRow.Cells[5].Value.ToString();
+
+            //customer.ShowDialog();
+            //refresh();
         }
 
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +76,19 @@ namespace insaat
         {
             var catalogForm = new Catalog();
             catalogForm.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var customer = new CustomerEdit(customersDataGridView.CurrentRow);
+            customer.nameTextBox.Text = customersDataGridView.CurrentRow.Cells[1].Value.ToString();
+            customer.objectTextBox.Text = customersDataGridView.CurrentRow.Cells[2].Value.ToString();
+            customer.typeOfWorkTextBox.Text = customersDataGridView.CurrentRow.Cells[3].Value.ToString();
+            customer.contractorTextBox.Text = customersDataGridView.CurrentRow.Cells[4].Value.ToString();
+            customer.brigadeTextBox.Text = customersDataGridView.CurrentRow.Cells[5].Value.ToString();
+
+            customer.ShowDialog();
+            refresh();
         }
     }
 }

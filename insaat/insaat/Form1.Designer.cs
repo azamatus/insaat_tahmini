@@ -41,8 +41,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.keşifnameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yeniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.baskıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veriTabanıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,13 +51,14 @@
             this.customersTableAdapter = new insaat.insaatDataSetTableAdapters.CustomersTableAdapter();
             this.tableAdapterManager = new insaat.insaatDataSetTableAdapters.TableAdapterManager();
             this.customersDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nesne = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
@@ -75,7 +74,7 @@
             this.yardımToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1060, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1057, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,8 +82,6 @@
             // 
             this.keşifnameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.yeniToolStripMenuItem,
-            this.exportToolStripMenuItem,
-            this.importToolStripMenuItem,
             this.çıkışToolStripMenuItem});
             this.keşifnameToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.keşifnameToolStripMenuItem.Name = "keşifnameToolStripMenuItem";
@@ -97,18 +94,6 @@
             this.yeniToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
             this.yeniToolStripMenuItem.Text = "Yeni keşifname";
             this.yeniToolStripMenuItem.Click += new System.EventHandler(this.yeniToolStripMenuItem_Click);
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
-            this.exportToolStripMenuItem.Text = "Export";
-            // 
-            // importToolStripMenuItem
-            // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
-            this.importToolStripMenuItem.Text = "İmport";
             // 
             // çıkışToolStripMenuItem
             // 
@@ -216,20 +201,9 @@
             this.customersDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.customersDataGridView.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.customersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customersDataGridView.Size = new System.Drawing.Size(1005, 375);
+            this.customersDataGridView.Size = new System.Drawing.Size(997, 255);
             this.customersDataGridView.TabIndex = 3;
             this.customersDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customersDataGridView_CellDoubleClick);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(153, 411);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Sil";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -287,11 +261,34 @@
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 200;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(123, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 36);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Sil";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(12, 291);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 36);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Düzenle";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 459);
+            this.ClientSize = new System.Drawing.Size(1057, 349);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.customersDataGridView);
             this.Controls.Add(this.menuStrip1);
@@ -317,8 +314,6 @@
         private System.Windows.Forms.ToolStripMenuItem yeniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem baskıToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veriTabanıToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yardımToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem programHakkındaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
@@ -337,6 +332,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.Button button2;
     }
 }
 
