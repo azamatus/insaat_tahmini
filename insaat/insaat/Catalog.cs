@@ -114,7 +114,7 @@ namespace insaat
                         break;
                 }
             }
-            else MessageBox.Show("Malzeme yok!", "Malzeme silme");
+            else MessageBox.Show("Malzeme yok veya malzeme seçiniz!", "Malzeme silme");
         }
 
         private void button6_Click(object sender, EventArgs e)
