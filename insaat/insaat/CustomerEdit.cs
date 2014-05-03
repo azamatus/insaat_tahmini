@@ -34,6 +34,7 @@ namespace insaat
             newCustomer.TypeOfWork = typeOfWorkTextBox.Text;
             newCustomer.Contractor = contractorTextBox.Text;
             newCustomer.Brigade = brigadeTextBox.Text;
+            newCustomer.Tarih = dateTimePicker1.Text;
 
             databaseOperations.UpdateCustomer(newCustomer);
             MessageBox.Show("Müşteri düzenlendi", "Müşteri");

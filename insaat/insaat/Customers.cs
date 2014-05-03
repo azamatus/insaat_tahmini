@@ -14,6 +14,7 @@ namespace insaat
         private string contractor;
         private string typeOfWork;
         private string brigade;
+        private string tarih;
         
         public int Id
         {
@@ -49,6 +50,12 @@ namespace insaat
         {
             get { return brigade; }
             set { brigade = value; }
+        }
+
+        public string Tarih
+        {
+            get { return tarih; }
+            set { tarih = value; }
         }
     }
 }

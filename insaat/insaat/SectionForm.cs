@@ -26,9 +26,9 @@ namespace insaat
 
         private void addSectionButton_Click(object sender, EventArgs e)
         {
-            var addSection = new AddSectionForm(this.materialsSectionsDataGridView.CurrentRow);
+            var addSection = new AddSectionForm(null);
             addSection.ShowDialog();
-            refresh();
+            refreshMaterialsSections();
         }
 
         private void editSectionButton_Click(object sender, EventArgs e)
@@ -37,23 +37,41 @@ namespace insaat
             editSection.Text = "Düzenleme";
             editSection.label1.Text = "Düzenleme";
             editSection.addSectionButton.Text = "Düzenle";
-            editSection.addSectionRichTextBox1.Text = this.materialsSectionsDataGridView.CurrentRow.Cells[1].Value.ToString();
-            editSection.ShowDialog();
-            refresh();
+            var dataGridViewRow = this.materialsSectionsDataGridView.CurrentRow;
+            if (dataGridViewRow != null)
+            {
+                editSection.addSectionRichTextBox1.Text = dataGridViewRow.Cells[1].Value.ToString();
+                editSection.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bölüm yok!", "Malzeme bölümün düzenleme");
+            }
+
+            refreshMaterialsSections();
         }
 
         private void deleteSectionButton_Click(object sender, EventArgs e)
         {
-            int materialsSectionsId = (int) this.materialsSectionsDataGridView.CurrentRow.Cells[0].Value;
-            switch (MessageBox.Show("Gerçekten silmek istiyor musunuz?", "Malzeme bölümün silme", MessageBoxButtons.YesNo))
+            var dataGridViewRow = this.materialsSectionsDataGridView.CurrentRow;
+            if (dataGridViewRow != null)
             {
-                case DialogResult.Yes:
-                    databaseOperations.DeleteMaterialsSections(materialsSectionsId);
-                    refresh();
-                    break;
+                int materialsSectionsId = (int) dataGridViewRow.Cells[0].Value;
+                switch (MessageBox.Show("Gerçekten silmek istiyor musunuz?", "Malzeme bölümün silme", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.Yes:
+                        databaseOperations.DeleteMaterialsSections(materialsSectionsId);
+                        refreshMaterialsSections();
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bölüm yok!", "Malzeme bölümün silme");
             }
         }
-        public void refresh()
+
+        public void refreshMaterialsSections()
         {
             materialsSectionsDataGridView.DataSource = databaseOperations.SelectSectionsMaterials();
         }

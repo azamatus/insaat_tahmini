@@ -31,8 +31,8 @@ namespace insaat
             {
                 command.CommandText =
                     string.Format(
-                        "INSERT INTO Customers (Name, Nesne, Contractor,TypeOfWork, Brigade) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
-                        customer.Name, customer.Nesne, customer.Contractor, customer.TypeOfWork, customer.Brigade);
+                        "INSERT INTO Customers (Name, Nesne, Contractor,TypeOfWork, Brigade, Tarih) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
+                        customer.Name, customer.Nesne, customer.Contractor, customer.TypeOfWork, customer.Brigade, customer.Tarih);
                 command.CommandType = CommandType.Text;
                 connection.Open();
 
@@ -73,6 +73,7 @@ namespace insaat
                     customers.Contractor = reader["Contractor"].ToString();
                     customers.TypeOfWork = reader["TypeOfWork"].ToString();
                     customers.Brigade = reader["Brigade"].ToString();
+                    customers.Tarih = reader["Tarih"].ToString();
                     
                     customersList.Add(customers);
                 }
@@ -99,9 +100,9 @@ namespace insaat
             {
                 command.CommandText =
                     string.Format(
-                        "UPDATE Customers SET Name= '{0}', Nesne= '{1}', Contractor='{2}', TypeOfWork='{3}', Brigade='{4}' WHERE Id= "+newCustomer.Id,
+                        "UPDATE Customers SET Name= '{0}', Nesne= '{1}', Contractor='{2}', TypeOfWork='{3}', Brigade='{4}', Tarih='{5}' WHERE Id= "+newCustomer.Id,
                         newCustomer.Name, newCustomer.Nesne, newCustomer.Contractor, newCustomer.TypeOfWork,
-                        newCustomer.Brigade);
+                        newCustomer.Brigade, newCustomer.Tarih);
                 command.CommandType = CommandType.Text;
                 connection.Open();
 
@@ -144,11 +145,7 @@ namespace insaat
             }
         }
 
-        public void InsertMaterials()
-        {
-            
-        }
-
+  
         public void InsertSectionsMaterials(MaterialsSections materialsSections)
         {
             try
@@ -348,7 +345,252 @@ namespace insaat
                 }
             }
         }
-        
+
+        public void DeletaMaterial(int material_id)
+        {
+            try
+            {
+                command.CommandText = "DELETE FROM Materials WHERE Id= " + material_id;
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public List<Works> SelectWorks()
+        {
+            List<Works> worksList = new List<Works>();
+
+            try
+            {
+                command.CommandText =
+                    "SELECT Works.id, Works.workName, Works.unit, Works.price, WorksSections.sectionName FROM (Works INNER JOIN WorksSections ON Works.sectionId = WorksSections.id)";
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Works works = new Works();
+
+                    works.Id = Convert.ToInt32(reader["Id"].ToString());
+                    works.WorkName = reader["WorkName"].ToString();
+                    works.Unit = reader["Unit"].ToString();
+                    works.Price = Convert.ToDouble(reader["Price"].ToString());
+                    works.Section = reader["SectionName"].ToString();
+                    worksList.Add(works);
+                }
+                return worksList;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void InsertWorks(Works works)
+        {
+            try
+            {
+                command.CommandText =
+                    string.Format(
+                        "INSERT INTO Works (WorkName, Unit, Price, SectionId) VALUES ('{0}', '{1}', '{2}', '{3}')",
+                        works.WorkName, works.Unit, works.Price, works.SectionId);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void UpdateWorks(Works works)
+        {
+            try
+            {
+                command.CommandText =
+                    string.Format(
+                        "UPDATE Works SET WorkName= '{0}', Unit= '{1}', Price='{2}', SectionId='{3}' WHERE Id= " + works.Id,
+                        works.WorkName, works.Unit, works.Price, works.SectionId);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public List<WorksSections> SelectSectionsWorks()
+        {
+            List<WorksSections> worksSectionsesList = new List<WorksSections>();
+            try
+            {
+                command.CommandText = "SELECT * FROM WorksSections";
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    WorksSections worksSections = new WorksSections();
+
+                    worksSections.Id = Convert.ToInt32(reader["Id"].ToString());
+                    worksSections.SectionName = reader["SectionName"].ToString();
+                    worksSectionsesList.Add(worksSections);
+                }
+                return worksSectionsesList;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        } 
+
+        public void DeleteWork(int work_id)
+        {
+            try
+            {
+                command.CommandText = "DELETE FROM Works WHERE Id= " + work_id;
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void InsertSectionsWorks(WorksSections worksSections)
+        {
+            try
+            {
+                command.CommandText = string.Format("INSERT INTO WorksSections (SectionName) Values('{0}')", worksSections.SectionName);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void UpdateWorksSections(WorksSections worksSections)
+        {
+            try
+            {
+                command.CommandText =
+                    string.Format(
+                        "UPDATE WorksSections SET SectionName= '{0}' WHERE Id= " + worksSections.Id,
+                        worksSections.SectionName);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void DeleteWorkSection(int workSectionId)
+        {
+            try
+            {
+                command.CommandText = "DELETE FROM WorksSections WHERE Id= " + workSectionId;
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
 
     }
 }

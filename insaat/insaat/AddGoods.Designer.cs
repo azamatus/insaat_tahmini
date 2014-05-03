@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGoods));
             this.nameLabel = new System.Windows.Forms.Label();
             this.sectionLabel = new System.Windows.Forms.Label();
             this.unitLabel = new System.Windows.Forms.Label();
@@ -36,26 +37,29 @@
             this.materialNameRichTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.materialSectionsComboBox1 = new System.Windows.Forms.ComboBox();
-            this.materialsSectionsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.insaatDataSet = new insaat.insaatDataSet();
             this.materialsSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.insaatDataSet = new insaat.insaatDataSet();
+            this.materialsSectionsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.unitTextBox1 = new System.Windows.Forms.TextBox();
             this.priceTextBox1 = new System.Windows.Forms.TextBox();
             this.addMaterialbutton1 = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.materialsSectionsTableAdapter = new insaat.insaatDataSetTableAdapters.MaterialsSectionsTableAdapter();
             this.materialsSectionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.materialsSectionsBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).BeginInit();
+            this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materialsTableAdapter = new insaat.insaatDataSetTableAdapters.MaterialsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSectionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsSectionsBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSectionsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameLabel.Location = new System.Drawing.Point(24, 68);
+            this.nameLabel.Location = new System.Drawing.Point(18, 68);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(48, 26);
             this.nameLabel.TabIndex = 0;
@@ -111,6 +115,7 @@
             // 
             // materialSectionsComboBox1
             // 
+            this.materialSectionsComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.materialsSectionsBindingSource, "sectionName", true));
             this.materialSectionsComboBox1.DataSource = this.materialsSectionsBindingSource;
             this.materialSectionsComboBox1.DisplayMember = "sectionName";
             this.materialSectionsComboBox1.FormattingEnabled = true;
@@ -120,20 +125,20 @@
             this.materialSectionsComboBox1.TabIndex = 6;
             this.materialSectionsComboBox1.ValueMember = "id";
             // 
-            // materialsSectionsBindingSource2
+            // materialsSectionsBindingSource
             // 
-            this.materialsSectionsBindingSource2.DataMember = "MaterialsSections";
-            this.materialsSectionsBindingSource2.DataSource = this.insaatDataSet;
+            this.materialsSectionsBindingSource.DataMember = "MaterialsSections";
+            this.materialsSectionsBindingSource.DataSource = this.insaatDataSet;
             // 
             // insaatDataSet
             // 
             this.insaatDataSet.DataSetName = "insaatDataSet";
             this.insaatDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // materialsSectionsBindingSource
+            // materialsSectionsBindingSource2
             // 
-            this.materialsSectionsBindingSource.DataMember = "MaterialsSections";
-            this.materialsSectionsBindingSource.DataSource = this.insaatDataSet;
+            this.materialsSectionsBindingSource2.DataMember = "MaterialsSections";
+            this.materialsSectionsBindingSource2.DataSource = this.insaatDataSet;
             // 
             // unitTextBox1
             // 
@@ -179,11 +184,20 @@
             this.materialsSectionsBindingSource1.DataMember = "MaterialsSections";
             this.materialsSectionsBindingSource1.DataSource = this.insaatDataSet;
             // 
+            // materialsBindingSource
+            // 
+            this.materialsBindingSource.DataMember = "Materials";
+            this.materialsBindingSource.DataSource = this.insaatDataSet;
+            // 
+            // materialsTableAdapter
+            // 
+            this.materialsTableAdapter.ClearBeforeFill = true;
+            // 
             // AddGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 385);
+            this.ClientSize = new System.Drawing.Size(454, 370);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.addMaterialbutton1);
             this.Controls.Add(this.priceTextBox1);
@@ -196,15 +210,19 @@
             this.Controls.Add(this.sectionLabel);
             this.Controls.Add(this.nameLabel);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddGoods";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Malzeme ekleme";
             this.Load += new System.EventHandler(this.AddGoods_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.materialsSectionsBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSectionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsSectionsBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialsSectionsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +246,7 @@
         public System.Windows.Forms.TextBox priceTextBox1;
         public System.Windows.Forms.Button addMaterialbutton1;
         private System.Windows.Forms.BindingSource materialsSectionsBindingSource2;
+        private System.Windows.Forms.BindingSource materialsBindingSource;
+        private insaatDataSetTableAdapters.MaterialsTableAdapter materialsTableAdapter;
     }
 }
