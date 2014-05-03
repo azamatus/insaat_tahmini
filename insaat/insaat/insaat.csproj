@@ -56,6 +56,18 @@
     <Compile Include="AddSectionForm.Designer.cs">
       <DependentUpon>AddSectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWorks.Designer.cs">
+      <DependentUpon>AddWorks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddWorkSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWorkSection.Designer.cs">
+      <DependentUpon>AddWorkSection.cs</DependentUpon>
+    </Compile>
     <Compile Include="SectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +113,23 @@
     <Compile Include="Smeta.Designer.cs">
       <DependentUpon>Smeta.cs</DependentUpon>
     </Compile>
+    <Compile Include="WorksSectionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorksSectionsForm.Designer.cs">
+      <DependentUpon>WorksSectionsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddGoods.resx">
       <DependentUpon>AddGoods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddSectionForm.resx">
       <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddWorks.resx">
+      <DependentUpon>AddWorks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddWorkSection.resx">
+      <DependentUpon>AddWorkSection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SectionForm.resx">
       <DependentUpon>SectionForm.cs</DependentUpon>
@@ -133,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="Smeta.resx">
       <DependentUpon>Smeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WorksSectionsForm.resx">
+      <DependentUpon>WorksSectionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="insaatDataSet.xsc">
       <DependentUpon>insaatDataSet.xsd</DependentUpon>

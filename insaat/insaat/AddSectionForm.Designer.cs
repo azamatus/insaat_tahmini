@@ -54,7 +54,7 @@
             // 
             // addSectionButton
             // 
-            this.addSectionButton.Location = new System.Drawing.Point(30, 163);
+            this.addSectionButton.Location = new System.Drawing.Point(30, 146);
             this.addSectionButton.Name = "addSectionButton";
             this.addSectionButton.Size = new System.Drawing.Size(82, 37);
             this.addSectionButton.TabIndex = 2;
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 226);
+            this.ClientSize = new System.Drawing.Size(394, 189);
             this.Controls.Add(this.addSectionRichTextBox1);
             this.Controls.Add(this.addSectionButton);
             this.Controls.Add(this.label1);

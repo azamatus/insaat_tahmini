@@ -24,7 +24,6 @@ namespace insaat
         private void Form1_Load(object sender, EventArgs e)
         {
             refresh();
-
         }
 
         private void yeniToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,15 +60,20 @@ namespace insaat
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int customer_id;
-            customer_id = (int)this.customersDataGridView.CurrentRow.Cells[0].Value;
-            switch (MessageBox.Show("Gerçekten silmek istiyor musunuz?", "Müşteri silme", MessageBoxButtons.YesNo))
+            int customer_id = 0;
+            var dataGridViewRow = this.customersDataGridView.CurrentRow;
+            if (dataGridViewRow != null)
             {
-                 case DialogResult.Yes:
-                    _databaseOperations.DeleteCustomer(customer_id);
-                    refresh();
-                    break;
+                customer_id = (int) dataGridViewRow.Cells[0].Value;
+                switch (MessageBox.Show("Gerçekten silmek istiyor musunuz?", "Müşteri silme", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.Yes:
+                        _databaseOperations.DeleteCustomer(customer_id);
+                        refresh();
+                        break;
+                }
             }
+            else MessageBox.Show("Müşteri yok!", "Müşteri silme");
         }
 
         private void veriTabanıToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,14 +85,34 @@ namespace insaat
         private void button2_Click(object sender, EventArgs e)
         {
             var customer = new CustomerEdit(customersDataGridView.CurrentRow);
-            customer.nameTextBox.Text = customersDataGridView.CurrentRow.Cells[1].Value.ToString();
-            customer.objectTextBox.Text = customersDataGridView.CurrentRow.Cells[2].Value.ToString();
-            customer.typeOfWorkTextBox.Text = customersDataGridView.CurrentRow.Cells[3].Value.ToString();
-            customer.contractorTextBox.Text = customersDataGridView.CurrentRow.Cells[4].Value.ToString();
-            customer.brigadeTextBox.Text = customersDataGridView.CurrentRow.Cells[5].Value.ToString();
+            if (customersDataGridView.CurrentRow != null)
+            {
+                customer.nameTextBox.Text = customersDataGridView.CurrentRow.Cells[2].Value.ToString();
+                customer.objectTextBox.Text = customersDataGridView.CurrentRow.Cells[3].Value.ToString();
+                customer.typeOfWorkTextBox.Text = customersDataGridView.CurrentRow.Cells[4].Value.ToString();
+                customer.contractorTextBox.Text = customersDataGridView.CurrentRow.Cells[5].Value.ToString();
+                customer.brigadeTextBox.Text = customersDataGridView.CurrentRow.Cells[6].Value.ToString();
+                customer.ShowDialog();
+                refresh();
+            }
+            else
+            {
+                MessageBox.Show("Müşteri yok!", "Müşteri düzenleme");
+            }
+            
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var customer = new Customer();
             customer.ShowDialog();
             refresh();
         }
-    }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var catalogForm = new Catalog();
+            catalogForm.ShowDialog();
+        }
+     }
 }

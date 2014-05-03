@@ -35,6 +35,7 @@
             System.Windows.Forms.Label contractorLabel;
             System.Windows.Forms.Label brigadeLabel;
             System.Windows.Forms.Label label_title;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,12 +48,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.customersTableAdapter = new insaat.insaatDataSetTableAdapters.CustomersTableAdapter();
             this.tableAdapterManager = new insaat.insaatDataSetTableAdapters.TableAdapterManager();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             nameLabel = new System.Windows.Forms.Label();
             objectLabel = new System.Windows.Forms.Label();
             typeOfWorkLabel = new System.Windows.Forms.Label();
             contractorLabel = new System.Windows.Forms.Label();
             brigadeLabel = new System.Windows.Forms.Label();
             label_title = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +120,16 @@
             label_title.TabIndex = 17;
             label_title.Text = "Müşteri ekleme";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label1.Location = new System.Drawing.Point(13, 234);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(49, 23);
+            label1.TabIndex = 18;
+            label1.Text = "Tarih";
+            // 
             // nameTextBox
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -170,7 +183,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(15, 256);
+            this.button1.Location = new System.Drawing.Point(17, 295);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 33);
             this.button1.TabIndex = 15;
@@ -181,7 +194,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(124, 256);
+            this.button2.Location = new System.Drawing.Point(124, 295);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 33);
             this.button2.TabIndex = 16;
@@ -197,13 +210,28 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CustomersTableAdapter = this.customersTableAdapter;
+            this.tableAdapterManager.MaterialsSectionsTableAdapter = null;
+            this.tableAdapterManager.MaterialsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = insaat.insaatDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 231);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(380, 27);
+            this.dateTimePicker1.TabIndex = 19;
+            this.dateTimePicker1.Value = new System.DateTime(2014, 5, 3, 0, 0, 0, 0);
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 328);
+            this.ClientSize = new System.Drawing.Size(560, 371);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(label1);
             this.Controls.Add(label_title);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -217,6 +245,7 @@
             this.Controls.Add(this.contractorTextBox);
             this.Controls.Add(brigadeLabel);
             this.Controls.Add(this.brigadeTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -244,6 +273,7 @@
         public System.Windows.Forms.TextBox typeOfWorkTextBox;
         public System.Windows.Forms.TextBox contractorTextBox;
         public System.Windows.Forms.TextBox brigadeTextBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
 
     }
 }

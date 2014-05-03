@@ -24,33 +24,41 @@ namespace insaat
 
         private void addMaterialbutton1_Click(object sender, EventArgs e)
         {
-            if (addMaterialbutton1.Text == "Ekle")
+            if (materialNameRichTextBox1.Text != "" && priceTextBox1.Text != "")
             {
-                Materials materials = new Materials();
-                materials.MaterialName = materialNameRichTextBox1.Text;
-                materials.Unit = unitTextBox1.Text;
-                materials.Price = Convert.ToDouble(priceTextBox1.Text);
-                MaterialsSections drv = (MaterialsSections)materialSectionsComboBox1.SelectedItem;
-                String valueOfItem = drv.Id.ToString();
-                materials.SectionId = Convert.ToInt32(valueOfItem);
-                databaseOperations.InsertMaterials(materials);
-                MessageBox.Show("Malzeme eklendi", "Malzeme");
-                this.Close();
+                if (addMaterialbutton1.Text == "Ekle")
+                {
+                    Materials materials = new Materials();
+                    materials.MaterialName = materialNameRichTextBox1.Text;
+                    materials.Unit = unitTextBox1.Text;
+                    materials.Price = Convert.ToDouble(priceTextBox1.Text);
+                    MaterialsSections drv = (MaterialsSections)materialSectionsComboBox1.SelectedItem;
+                    String valueOfItem = drv.Id.ToString();
+                    materials.SectionId = Convert.ToInt32(valueOfItem);
+                    databaseOperations.InsertMaterials(materials);
+                    MessageBox.Show("Malzeme eklendi", "Malzeme");
+                    this.Close();
+                }
+                else
+                {
+                    Materials materials = new Materials();
+                    materials.Id = int.Parse(_currentRow.Cells[0].Value.ToString());
+                    materials.MaterialName = materialNameRichTextBox1.Text;
+                    materials.Unit = unitTextBox1.Text;
+                    materials.Price = Convert.ToDouble(priceTextBox1.Text);
+                    MaterialsSections drv = (MaterialsSections)materialSectionsComboBox1.SelectedItem;
+                    String valueOfItem = drv.Id.ToString();
+                    materials.SectionId = Convert.ToInt32(valueOfItem);
+                    databaseOperations.UpdateMaterials(materials);
+                    MessageBox.Show("Malzeme düzenlendi", "Malzeme");
+                    this.Close();
+                }
             }
             else
             {
-                Materials materials = new Materials();
-                materials.Id = int.Parse(_currentRow.Cells[0].Value.ToString());
-                materials.MaterialName = materialNameRichTextBox1.Text;
-                materials.Unit = unitTextBox1.Text;
-                materials.Price = Convert.ToDouble(priceTextBox1.Text);
-                MaterialsSections drv = (MaterialsSections)materialSectionsComboBox1.SelectedItem;
-                String valueOfItem = drv.Id.ToString();
-                materials.SectionId = Convert.ToInt32(valueOfItem);
-                databaseOperations.UpdateMaterials(materials);
-                MessageBox.Show("Malzeme düzenlendi", "Malzeme");
-                this.Close();
+                MessageBox.Show("Malzeme yazınız", "Malzeme");
             }
+          
         }
 
         private void priceTextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -61,10 +69,9 @@ namespace insaat
 
         private void AddGoods_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'insaatDataSet.MaterialsSections' table. You can move, or remove it, as needed.
-            //this.materialsSectionsTableAdapter.Fill(this.insaatDataSet.MaterialsSections);
+            // TODO: This line of code loads data into the 'insaatDataSet.Materials' table. You can move, or remove it, as needed.
             refreshComboBox();
-
+            this.materialsTableAdapter.Fill(this.insaatDataSet.Materials);
         }
 
         public void refreshComboBox()

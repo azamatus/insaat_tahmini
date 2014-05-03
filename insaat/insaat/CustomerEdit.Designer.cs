@@ -34,6 +34,7 @@
             System.Windows.Forms.Label typeOfWorkLabel;
             System.Windows.Forms.Label contractorLabel;
             System.Windows.Forms.Label brigadeLabel;
+            System.Windows.Forms.Label label1;
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.nameTextBox = new System.Windows.Forms.TextBox();
@@ -41,12 +42,14 @@
             this.typeOfWorkTextBox = new System.Windows.Forms.TextBox();
             this.contractorTextBox = new System.Windows.Forms.TextBox();
             this.brigadeTextBox = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             label_title = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             objectLabel = new System.Windows.Forms.Label();
             typeOfWorkLabel = new System.Windows.Forms.Label();
             contractorLabel = new System.Windows.Forms.Label();
             brigadeLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_title
@@ -113,7 +116,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(124, 256);
+            this.button2.Location = new System.Drawing.Point(124, 286);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 33);
             this.button2.TabIndex = 29;
@@ -124,7 +127,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(15, 256);
+            this.button1.Location = new System.Drawing.Point(17, 286);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 33);
             this.button1.TabIndex = 28;
@@ -172,11 +175,33 @@
             this.brigadeTextBox.Size = new System.Drawing.Size(380, 27);
             this.brigadeTextBox.TabIndex = 27;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 232);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(380, 27);
+            this.dateTimePicker1.TabIndex = 32;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label1.Location = new System.Drawing.Point(13, 235);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(49, 23);
+            label1.TabIndex = 31;
+            label1.Text = "Tarih";
+            // 
             // CustomerEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 328);
+            this.ClientSize = new System.Drawing.Size(528, 338);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(label1);
             this.Controls.Add(label_title);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -209,5 +234,6 @@
         public System.Windows.Forms.TextBox typeOfWorkTextBox;
         public System.Windows.Forms.TextBox contractorTextBox;
         public System.Windows.Forms.TextBox brigadeTextBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

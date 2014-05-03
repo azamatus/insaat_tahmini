@@ -35,6 +35,7 @@ namespace insaat
             customer.TypeOfWork = typeOfWorkTextBox.Text;
             customer.Contractor = contractorTextBox.Text;
             customer.Brigade = brigadeTextBox.Text;
+            customer.Tarih = dateTimePicker1.Text;
             
             _databaseOperations.Insert(customer);
             MessageBox.Show("Müşteri eklendi", "Müşteri");

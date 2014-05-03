@@ -11,11 +11,11 @@ using Entity;
 
 namespace insaat
 {
-    public partial class AddSectionForm : Form
+    public partial class AddWorkSection : Form
     {
         private readonly DataGridViewRow _currentRow;
         DatabaseOperations databaseOperations = new DatabaseOperations();
-        public AddSectionForm(DataGridViewRow currentRow)
+        public AddWorkSection(DataGridViewRow currentRow)
         {
             _currentRow = currentRow;
             InitializeComponent();
@@ -27,25 +27,25 @@ namespace insaat
             {
                 if (addSectionButton.Text == "Ekle")
                 {
-                    MaterialsSections materialsSections = new MaterialsSections();
-                    materialsSections.SectionName = addSectionRichTextBox1.Text;
-                    databaseOperations.InsertSectionsMaterials(materialsSections);
+                    WorksSections worksSections = new WorksSections();
+                    worksSections.SectionName = addSectionRichTextBox1.Text;
+                    databaseOperations.InsertSectionsWorks(worksSections);
                     MessageBox.Show("Bölüm eklendi", "Bölüm");
                     this.Close();
                 }
                 else
                 {
-                    MaterialsSections materialsSections = new MaterialsSections();
-                    materialsSections.Id = int.Parse(_currentRow.Cells[0].Value.ToString());
-                    materialsSections.SectionName = addSectionRichTextBox1.Text;
-                    databaseOperations.UpdateMaterialsSections(materialsSections);
-                    MessageBox.Show("Malzeme bölümü düzenlendi", "Malzeme");
+                    WorksSections worksSections = new WorksSections();
+                    worksSections.Id = int.Parse(_currentRow.Cells[0].Value.ToString());
+                    worksSections.SectionName = addSectionRichTextBox1.Text;
+                    databaseOperations.UpdateWorksSections(worksSections);
+                    MessageBox.Show("İşler bölümü düzenlendi", "İşler");
                     this.Close();
                 }
             }
             else
             {
-                MessageBox.Show("Malzeme bölümün yazınız", "Malzeme");
+                MessageBox.Show("İşin bölümün yazınız", "İş");
             }
         }
     }
