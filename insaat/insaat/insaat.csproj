@@ -50,11 +50,35 @@
     <Compile Include="AddGoods.Designer.cs">
       <DependentUpon>AddGoods.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddingToEstimateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingToEstimateForm.Designer.cs">
+      <DependentUpon>AddingToEstimateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddingToEstimateMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingToEstimateMaterials.Designer.cs">
+      <DependentUpon>AddingToEstimateMaterials.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddSectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddSectionForm.Designer.cs">
       <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddToEstimateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddToEstimateForm.Designer.cs">
+      <DependentUpon>AddToEstimateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddToEstimateMaterialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddToEstimateMaterialsForm.Designer.cs">
+      <DependentUpon>AddToEstimateMaterialsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AddWorks.cs">
       <SubType>Form</SubType>
@@ -122,8 +146,20 @@
     <EmbeddedResource Include="AddGoods.resx">
       <DependentUpon>AddGoods.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddingToEstimateForm.resx">
+      <DependentUpon>AddingToEstimateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingToEstimateMaterials.resx">
+      <DependentUpon>AddingToEstimateMaterials.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddSectionForm.resx">
       <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddToEstimateForm.resx">
+      <DependentUpon>AddToEstimateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddToEstimateMaterialsForm.resx">
+      <DependentUpon>AddToEstimateMaterialsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddWorks.resx">
       <DependentUpon>AddWorks.cs</DependentUpon>

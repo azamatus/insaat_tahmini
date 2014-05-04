@@ -23,7 +23,9 @@ namespace insaat
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'insaatDataSet.Estimates' table. You can move, or remove it, as needed.
             refresh();
+           
         }
 
         private void yeniToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,17 +42,11 @@ namespace insaat
         private void customersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var smetaForm = new SmetaForm();
+            int customer_id = (int) customersDataGridView.CurrentRow.Cells[0].Value;
+            smetaForm.customerIdLabel.Text = customer_id.ToString();
+            smetaForm.estimateDataGridView.DataSource = _databaseOperations.SelectEstimateById(customer_id);
             smetaForm.ShowDialog();
 
-            //var customer = new CustomerEdit(customersDataGridView.CurrentRow);
-            //customer.nameTextBox.Text = customersDataGridView.CurrentRow.Cells[1].Value.ToString();
-            //customer.objectTextBox.Text = customersDataGridView.CurrentRow.Cells[2].Value.ToString();
-            //customer.typeOfWorkTextBox.Text = customersDataGridView.CurrentRow.Cells[3].Value.ToString();
-            //customer.contractorTextBox.Text = customersDataGridView.CurrentRow.Cells[4].Value.ToString();
-            //customer.brigadeTextBox.Text = customersDataGridView.CurrentRow.Cells[5].Value.ToString();
-
-            //customer.ShowDialog();
-            //refresh();
         }
 
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +109,11 @@ namespace insaat
         {
             var catalogForm = new Catalog();
             catalogForm.ShowDialog();
+        }
+
+        private void programHakkındaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
      }
 }

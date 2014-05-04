@@ -75,5 +75,5 @@ namespace insaat
         {
             materialsSectionsDataGridView.DataSource = databaseOperations.SelectSectionsMaterials();
         }
-    }
+     }
 }
