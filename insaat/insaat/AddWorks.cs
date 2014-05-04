@@ -70,8 +70,19 @@ namespace insaat
         
         private void priceTextBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar))
-                e.Handled = true;
+            if (char.IsDigit(e.KeyChar))
+            {
+                return;
+            }
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                return;
+            }
+            if (e.KeyChar == ',' && !priceTextBox1.Text.Contains(','))
+            {
+                return;
+            }
+            e.Handled = true;
         }
 
         public void refreshComboBox()

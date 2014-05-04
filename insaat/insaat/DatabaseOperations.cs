@@ -597,7 +597,7 @@ namespace insaat
             try
             {
                 command.CommandText =
-                    "SELECT Estimates.id, Estimates.denotation, Estimates.unit, Estimates.quantity, Estimates.price, Estimates.total, Estimates.customerId FROM Estimates INNER JOIN Customers ON Estimates.customerId = Customers.id WHERE Customers.id = " + customer_id.ToString();
+                    "SELECT Estimates.id,  Estimates.customerId, Estimates.denotation, Estimates.unit, Estimates.quantity, Estimates.price, Estimates.total FROM Estimates INNER JOIN Customers ON Estimates.customerId = Customers.id WHERE Customers.id = " + customer_id.ToString();
                 command.CommandType = CommandType.Text;
                 connection.Open();
 
