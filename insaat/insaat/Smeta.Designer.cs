@@ -44,6 +44,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.customerIdLabel = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.excelButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.estimateDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estimatesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).BeginInit();
@@ -53,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 425);
+            this.label1.Location = new System.Drawing.Point(12, 462);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 23);
             this.label1.TabIndex = 3;
@@ -82,7 +84,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.estimateDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.estimateDataGridView.GridColor = System.Drawing.Color.DarkGray;
-            this.estimateDataGridView.Location = new System.Drawing.Point(12, 47);
+            this.estimateDataGridView.Location = new System.Drawing.Point(12, 60);
             this.estimateDataGridView.Name = "estimateDataGridView";
             this.estimateDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -120,7 +122,7 @@
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.totalLabel.ForeColor = System.Drawing.Color.Black;
-            this.totalLabel.Location = new System.Drawing.Point(140, 425);
+            this.totalLabel.Location = new System.Drawing.Point(140, 462);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(0, 23);
             this.totalLabel.TabIndex = 6;
@@ -150,7 +152,7 @@
             // customerIdLabel
             // 
             this.customerIdLabel.AutoSize = true;
-            this.customerIdLabel.Location = new System.Drawing.Point(214, 430);
+            this.customerIdLabel.Location = new System.Drawing.Point(214, 467);
             this.customerIdLabel.Name = "customerIdLabel";
             this.customerIdLabel.Size = new System.Drawing.Size(0, 19);
             this.customerIdLabel.TabIndex = 9;
@@ -166,11 +168,26 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // excelButton
+            // 
+            this.excelButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("excelButton.BackgroundImage")));
+            this.excelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.excelButton.FlatAppearance.BorderSize = 0;
+            this.excelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.excelButton.Location = new System.Drawing.Point(621, 3);
+            this.excelButton.Name = "excelButton";
+            this.excelButton.Size = new System.Drawing.Size(57, 51);
+            this.excelButton.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.excelButton, "Excele gönderme");
+            this.excelButton.UseVisualStyleBackColor = true;
+            this.excelButton.Click += new System.EventHandler(this.excelButton_Click);
+            // 
             // SmetaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 458);
+            this.ClientSize = new System.Drawing.Size(1084, 498);
+            this.Controls.Add(this.excelButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.customerIdLabel);
             this.Controls.Add(this.button2);
@@ -205,5 +222,7 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.Label customerIdLabel;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button excelButton;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

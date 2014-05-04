@@ -42,11 +42,14 @@ namespace insaat
         private void customersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             var smetaForm = new SmetaForm();
+            smetaForm.customerOfEstimate = customersDataGridView.CurrentRow.Cells[2].Value.ToString();
+            smetaForm.dateOfEstimate = customersDataGridView.CurrentRow.Cells[1].Value.ToString();
+            smetaForm.objectOfEstimate = customersDataGridView.CurrentRow.Cells[3].Value.ToString();
+            smetaForm.typeOfEstimate = customersDataGridView.CurrentRow.Cells[4].Value.ToString();
+            smetaForm.contractorOfEstimate = customersDataGridView.CurrentRow.Cells[5].Value.ToString();
             int customer_id = (int) customersDataGridView.CurrentRow.Cells[0].Value;
             smetaForm.customerIdLabel.Text = customer_id.ToString();
-            smetaForm.estimateDataGridView.DataSource = _databaseOperations.SelectEstimateById(customer_id);
             smetaForm.ShowDialog();
-
         }
 
         private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
