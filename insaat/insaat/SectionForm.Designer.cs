@@ -64,9 +64,12 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CustomersTableAdapter = null;
+            this.tableAdapterManager.EstimatesTableAdapter = null;
             this.tableAdapterManager.MaterialsSectionsTableAdapter = this.materialsSectionsTableAdapter;
             this.tableAdapterManager.MaterialsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = insaat.insaatDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorksSectionsTableAdapter = null;
+            this.tableAdapterManager.WorksTableAdapter = null;
             // 
             // materialsSectionsDataGridView
             // 

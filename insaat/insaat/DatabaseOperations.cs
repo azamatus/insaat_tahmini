@@ -144,8 +144,7 @@ namespace insaat
                 }
             }
         }
-
-  
+        
         public void InsertSectionsMaterials(MaterialsSections materialsSections)
         {
             try
@@ -592,5 +591,138 @@ namespace insaat
             }
         }
 
+        public List<Estimate> SelectEstimateById(int customer_id)
+        {
+            List<Estimate> estimatesList = new List<Estimate>();
+            try
+            {
+                command.CommandText =
+                    "SELECT Estimates.id, Estimates.denotation, Estimates.unit, Estimates.quantity, Estimates.price, Estimates.total, Estimates.customerId FROM Estimates INNER JOIN Customers ON Estimates.customerId = Customers.id WHERE Customers.id = " + customer_id.ToString();
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Estimate estimate = new Estimate();
+
+                    estimate.Id = Convert.ToInt32(reader["Id"].ToString());
+                    estimate.Denotation = reader["Denotation"].ToString();
+                    estimate.Unit = reader["Unit"].ToString();
+                    estimate.Quantity = Convert.ToDouble(reader["Quantity"].ToString());
+                    estimate.Price = Convert.ToDouble(reader["Price"].ToString());
+                    estimate.Total = Convert.ToDouble(reader["Total"].ToString());
+                    estimate.CustomerId = Convert.ToInt32(reader["CustomerId"].ToString());
+                    estimatesList.Add(estimate);
+                }
+                return estimatesList;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void InsertEstimate(Estimate estimate)
+        {
+            try
+            {
+                command.CommandText =
+                    string.Format(
+                        "INSERT INTO Estimates (Denotation, Unit, Quantity, Price, Total, CustomerId) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
+                        estimate.Denotation, estimate.Unit, estimate.Quantity, estimate.Price, estimate.Total, estimate.CustomerId);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public List<Estimate> SelectEstimate()
+        {
+            List<Estimate> estimatesList = new List<Estimate>();
+            try
+            {
+                command.CommandText = "SELECT * FROM Estimates";
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                OleDbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Estimate estimate = new Estimate();
+
+                    estimate.Id = Convert.ToInt32(reader["Id"].ToString());
+                    estimate.Denotation = reader["Denotation"].ToString();
+                    estimate.Unit = reader["Unit"].ToString();
+                    estimate.Quantity = Convert.ToDouble(reader["Quantity"].ToString());
+                    estimate.Price = Convert.ToDouble(reader["Price"].ToString());
+                    estimate.Total = Convert.ToDouble(reader["Total"].ToString());
+                    estimate.CustomerId = Convert.ToInt32(reader["CustomerId"].ToString());
+                    estimatesList.Add(estimate);
+                }
+                return estimatesList;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        } 
+
+        public void UpdateEstimate(Estimate estimate)
+        {
+            try
+            {
+                command.CommandText =
+                    string.Format(
+                        "UPDATE Estimates SET Denotation= '{0}', Unit= '{1}', Quantity='{2}', Price='{3}', Total='{4}' WHERE Id= " + estimate.Id,
+                        estimate.Denotation, estimate.Unit, estimate.Quantity, estimate.Price, estimate.Total);
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
     }
 }
