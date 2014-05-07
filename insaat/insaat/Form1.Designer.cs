@@ -61,17 +61,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button4 = new System.Windows.Forms.Button();
-            this.estimatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersTableAdapter = new insaat.insaatDataSetTableAdapters.CustomersTableAdapter();
             this.tableAdapterManager = new insaat.insaatDataSetTableAdapters.TableAdapterManager();
-            this.estimatesTableAdapter = new insaat.insaatDataSetTableAdapters.EstimatesTableAdapter();
-            this.estimatesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estimatesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estimatesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -334,11 +329,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // estimatesBindingSource
-            // 
-            this.estimatesBindingSource.DataMember = "Estimates";
-            this.estimatesBindingSource.DataSource = this.insaatDataSet;
-            // 
             // customersTableAdapter
             // 
             this.customersTableAdapter.ClearBeforeFill = true;
@@ -353,15 +343,6 @@
             this.tableAdapterManager.UpdateOrder = insaat.insaatDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.WorksSectionsTableAdapter = null;
             this.tableAdapterManager.WorksTableAdapter = null;
-            // 
-            // estimatesTableAdapter
-            // 
-            this.estimatesTableAdapter.ClearBeforeFill = true;
-            // 
-            // estimatesBindingSource1
-            // 
-            this.estimatesBindingSource1.DataMember = "Estimates";
-            this.estimatesBindingSource1.DataSource = this.insaatDataSet;
             // 
             // Form1
             // 
@@ -386,8 +367,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estimatesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estimatesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,9 +399,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn estimateId;
-        private System.Windows.Forms.BindingSource estimatesBindingSource;
-        private insaatDataSetTableAdapters.EstimatesTableAdapter estimatesTableAdapter;
-        private System.Windows.Forms.BindingSource estimatesBindingSource1;
     }
 }
 

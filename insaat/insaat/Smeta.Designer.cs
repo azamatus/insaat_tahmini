@@ -46,6 +46,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.excelButton = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.estimateDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estimatesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.insaatDataSet)).BeginInit();
@@ -174,7 +175,7 @@
             this.excelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.excelButton.FlatAppearance.BorderSize = 0;
             this.excelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.excelButton.Location = new System.Drawing.Point(621, 3);
+            this.excelButton.Location = new System.Drawing.Point(850, 1);
             this.excelButton.Name = "excelButton";
             this.excelButton.Size = new System.Drawing.Size(57, 51);
             this.excelButton.TabIndex = 11;
@@ -182,11 +183,22 @@
             this.excelButton.UseVisualStyleBackColor = true;
             this.excelButton.Click += new System.EventHandler(this.excelButton_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(623, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(147, 30);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Silme";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // SmetaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 498);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.excelButton);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.customerIdLabel);
@@ -224,5 +236,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button excelButton;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button4;
     }
 }

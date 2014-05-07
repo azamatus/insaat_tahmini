@@ -109,9 +109,19 @@
             brigadeLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             brigadeLabel.Location = new System.Drawing.Point(13, 193);
             brigadeLabel.Name = "brigadeLabel";
-            brigadeLabel.Size = new System.Drawing.Size(60, 23);
+            brigadeLabel.Size = new System.Drawing.Size(106, 23);
             brigadeLabel.TabIndex = 26;
-            brigadeLabel.Text = "Tugay:";
+            brigadeLabel.Text = "İnşaat ekibi:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            label1.Location = new System.Drawing.Point(13, 235);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(49, 23);
+            label1.TabIndex = 31;
+            label1.Text = "Tarih";
             // 
             // button2
             // 
@@ -184,16 +194,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(380, 27);
             this.dateTimePicker1.TabIndex = 32;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            label1.Location = new System.Drawing.Point(13, 235);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(49, 23);
-            label1.TabIndex = 31;
-            label1.Text = "Tarih";
             // 
             // CustomerEdit
             // 

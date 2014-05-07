@@ -106,9 +106,9 @@
             brigadeLabel.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             brigadeLabel.Location = new System.Drawing.Point(13, 193);
             brigadeLabel.Name = "brigadeLabel";
-            brigadeLabel.Size = new System.Drawing.Size(60, 23);
+            brigadeLabel.Size = new System.Drawing.Size(106, 23);
             brigadeLabel.TabIndex = 11;
-            brigadeLabel.Text = "Tugay:";
+            brigadeLabel.Text = "İnşaat ekibi:";
             // 
             // label_title
             // 
@@ -210,9 +210,12 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CustomersTableAdapter = this.customersTableAdapter;
+            this.tableAdapterManager.EstimatesTableAdapter = null;
             this.tableAdapterManager.MaterialsSectionsTableAdapter = null;
             this.tableAdapterManager.MaterialsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = insaat.insaatDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorksSectionsTableAdapter = null;
+            this.tableAdapterManager.WorksTableAdapter = null;
             // 
             // dateTimePicker1
             // 
