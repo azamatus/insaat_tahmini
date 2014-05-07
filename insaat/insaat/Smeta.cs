@@ -95,6 +95,7 @@ namespace insaat
                 editEstimate.customerIdLabel.Text = customerIdLabel.Text;
                 editEstimate.ShowDialog();
                 refreshEstimate();
+                dataGridCorrection();
                 multiply();
             }
             else
@@ -126,8 +127,8 @@ namespace insaat
             borders.Weight = 2d;
             Excel.Visible = true;
             Excel.Rows[1].Font.Bold = true;
-            Excel.Rows[1].Font.Size = 24;
-            Excel.Cells[1,1] = "Keşifname";
+            worksheet.Cells[1, 1].Font.Size = 24;
+            worksheet.Cells[1, 1] = "Keşifname";
             worksheet.Name = "Keşifname";
             Excel.Rows[2].Font.Bold = true;
             Excel.Rows[2].Font.Size = 14;
@@ -160,30 +161,50 @@ namespace insaat
                 endRow++;
             }
             Excel.Rows[endRow + 3].Font.Bold = true;
-            Excel.Rows[endRow + 3].Font.Size = 16;
+            Excel.Rows[endRow + 3].Font.Size = 14;
             Excel.Rows[endRow + 5].Font.Bold = true;
-            Excel.Rows[endRow + 5].Font.Size = 16;
+            Excel.Rows[endRow + 5].Font.Size = 14;
             Excel.Rows[endRow + 6].Font.Bold = true;
-            Excel.Rows[endRow + 6].Font.Size = 16;
+            Excel.Rows[endRow + 6].Font.Size = 14;
             Excel.Rows[endRow + 7].Font.Bold = true;
-            Excel.Rows[endRow + 7].Font.Size = 16;
+            Excel.Rows[endRow + 7].Font.Size = 14;
             Excel.Rows[endRow + 8].Font.Bold = true;
-            Excel.Rows[endRow + 8].Font.Size = 16;
+            Excel.Rows[endRow + 8].Font.Size = 14;
             Excel.Rows[endRow + 9].Font.Bold = true;
-            Excel.Rows[endRow + 9].Font.Size = 16;
-            worksheet.Cells[endRow + 3, 1] = "Genel toplam";
-            worksheet.Cells[endRow + 3, 2] = totalLabel.Text;
-            worksheet.Cells[endRow + 5, 1] = "Tarih";
-            worksheet.Cells[endRow + 5, 2] = dateOfEstimate;
-            worksheet.Cells[endRow + 6, 1] = "Müşteri";
-            worksheet.Cells[endRow + 6, 2] = customerOfEstimate;
-            worksheet.Cells[endRow + 7, 1] = "Nesne";
+            Excel.Rows[endRow + 9].Font.Size = 14;
+            worksheet.Cells[endRow + 3, 1] = "Genel toplam:";
+            worksheet.Cells[endRow + 3, 5] = totalLabel.Text;
+            worksheet.Cells[endRow + 5, 1] = "Müşteri:";
+            worksheet.Cells[endRow + 5, 2] = customerOfEstimate;
+            worksheet.Cells[endRow + 6, 1] = "İşin türü:";
+            worksheet.Cells[endRow + 6, 2] = typeOfEstimate;
+            worksheet.Cells[endRow + 7, 1] = "Nesne:";
             worksheet.Cells[endRow + 7, 2] = objectOfEstimate;
-            worksheet.Cells[endRow + 8, 1] = "İşin türü";
-            worksheet.Cells[endRow + 8, 2] = typeOfEstimate;
-            worksheet.Cells[endRow + 9, 1] = "Mütteahit";
-            worksheet.Cells[endRow + 9, 2] = contractorOfEstimate;
+            worksheet.Cells[endRow + 8, 1] = "Mütteahit:";
+            worksheet.Cells[endRow + 8, 2] = contractorOfEstimate;
+            worksheet.Cells[endRow + 9, 4] = "Tarih: " + dateOfEstimate;
+            
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int estimate_id = 0;
+            var dataGridViewRow = this.estimateDataGridView.CurrentRow;
+            if (dataGridViewRow != null)
+            {
+                estimate_id = (int)dataGridViewRow.Cells[0].Value;
+                switch (MessageBox.Show("Gerçekten silmek istiyor musunuz?", "Silme", MessageBoxButtons.YesNo))
+                {
+                    case DialogResult.Yes:
+                        databaseOperations.DeleteEstimate(estimate_id);
+                        refreshEstimate();
+                        dataGridCorrection();
+                        multiply();
+                        break;
+                }
+            }
+            else MessageBox.Show("Keşifnamede iş ve malzeme yok!", "Silme");
         }
         
     }

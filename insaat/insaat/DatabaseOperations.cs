@@ -658,46 +658,6 @@ namespace insaat
             }
         }
 
-        public List<Estimate> SelectEstimate()
-        {
-            List<Estimate> estimatesList = new List<Estimate>();
-            try
-            {
-                command.CommandText = "SELECT * FROM Estimates";
-                command.CommandType = CommandType.Text;
-                connection.Open();
-
-                OleDbDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    Estimate estimate = new Estimate();
-
-                    estimate.Id = Convert.ToInt32(reader["Id"].ToString());
-                    estimate.Denotation = reader["Denotation"].ToString();
-                    estimate.Unit = reader["Unit"].ToString();
-                    estimate.Quantity = Convert.ToDouble(reader["Quantity"].ToString());
-                    estimate.Price = Convert.ToDouble(reader["Price"].ToString());
-                    estimate.Total = Convert.ToDouble(reader["Total"].ToString());
-                    estimate.CustomerId = Convert.ToInt32(reader["CustomerId"].ToString());
-                    estimatesList.Add(estimate);
-                }
-                return estimatesList;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                if (connection != null)
-                {
-                    connection.Close();
-                }
-            }
-        } 
-
         public void UpdateEstimate(Estimate estimate)
         {
             try
@@ -714,6 +674,29 @@ namespace insaat
             catch (Exception)
             {
 
+                throw;
+            }
+            finally
+            {
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        public void DeleteEstimate(int estimate_id)
+        {
+            try
+            {
+                command.CommandText = "DELETE FROM Estimates WHERE Id= " + estimate_id;
+                command.CommandType = CommandType.Text;
+                connection.Open();
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
                 throw;
             }
             finally
